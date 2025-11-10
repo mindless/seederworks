@@ -5,23 +5,23 @@ import { Footer } from '@/components/shared/Footer'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Invstor X - Framer Template',
+  title: 'SeederWorks - AI Venture Studio & Fund',
   description:
-    'Introducing Invstor X, a cutting-edge investor Framer Template designed for venture capital firms and angel investors seeking a stunning website.',
-  keywords: ['investment', 'venture capital', 'startup', 'funding', 'investors'],
-  authors: [{ name: 'Invstor X' }],
+    'SeederWorks is an AI Venture Studio & Fund. We seed, build, and scale high-potential companies across Southeast Asia—faster, smarter, founder-first.',
+  keywords: ['venture studio', 'ai', 'startup', 'funding', 'southeast asia', 'founders'],
+  authors: [{ name: 'SeederWorks' }],
   openGraph: {
-    title: 'Invstor X - Framer Template',
+    title: 'SeederWorks - AI Venture Studio & Fund',
     description:
-      'Introducing Invstor X, a cutting-edge investor Framer Template designed for venture capital firms and angel investors seeking a stunning website.',
+      'SeederWorks is an AI Venture Studio & Fund. We seed, build, and scale high-potential companies across Southeast Asia—faster, smarter, founder-first.',
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Invstor X - Framer Template',
+    title: 'SeederWorks - AI Venture Studio & Fund',
     description:
-      'Introducing Invstor X, a cutting-edge investor Framer Template designed for venture capital firms and angel investors seeking a stunning website.',
+      'SeederWorks is an AI Venture Studio & Fund. We seed, build, and scale high-potential companies across Southeast Asia—faster, smarter, founder-first.',
   },
 }
 
