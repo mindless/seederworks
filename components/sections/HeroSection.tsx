@@ -12,7 +12,7 @@ export function HeroSection() {
       <div className="w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen lg:min-h-0">
           {/* Left Column - Content */}
-          <div className="flex items-center py-32 lg:py-0 px-4 sm:px-6 lg:pl-[calc((100vw-80rem)/2+2rem)] lg:pr-8">
+          <div className="flex items-center py-32 lg:py-0 px-4 sm:px-6 lg:pl-[calc((100vw-80rem)/2+2rem)] lg:pr-16">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -33,9 +33,6 @@ export function HeroSection() {
                 </Button>
                 <Button variant="secondary" size="lg">
                   Invest with Us
-                </Button>
-                <Button variant="secondary" size="lg">
-                  Watch Overview
                 </Button>
               </div>
               <div className="flex flex-col sm:flex-row gap-6 text-sm text-gray-600">
