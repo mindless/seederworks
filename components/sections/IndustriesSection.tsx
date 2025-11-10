@@ -1,0 +1,79 @@
+'use client'
+
+import Image from 'next/image'
+import { motion } from 'framer-motion'
+import { Container } from '@/components/ui/Container'
+import { SectionLabel } from '@/components/ui/SectionLabel'
+import { Card, CardContent } from '@/components/ui/Card'
+
+const industries = [
+  {
+    id: '1',
+    name: 'Mobile apps',
+    icon: '/images/xi5XFBLWLG7Nshsa1QAgviBmpCU.png',
+    description:
+      'Lorem ipsum dolor sit amet consectetur. Sollicitudin pulvinar ipsum ut senectus malesuada dui.',
+  },
+  {
+    id: '2',
+    name: 'Hardware companies',
+    icon: '/images/5ZfAfDkgRfqGjBM833DdhMREBc.png',
+    description:
+      'Lorem ipsum dolor sit amet consectetur. Sollicitudin pulvinar ipsum ut senectus malesuada dui.',
+  },
+  {
+    id: '3',
+    name: 'Software companies',
+    icon: '/images/4Si4LHeUDAhbmWjyOvWVLLblAs.png',
+    description:
+      'Lorem ipsum dolor sit amet consectetur. Sollicitudin pulvinar ipsum ut senectus malesuada dui.',
+  },
+]
+
+export function IndustriesSection() {
+  return (
+    <section className="py-20 md:py-32 bg-white">
+      <Container>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <SectionLabel number="05/" className="justify-center" />
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0E1435] mb-6">
+            Industries we invest in
+          </h2>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {industries.map((industry, index) => (
+            <motion.div
+              key={industry.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              <Card className="h-full hover:shadow-lg transition-shadow">
+                <CardContent className="p-8 text-center">
+                  <div className="relative w-full h-48 mb-6">
+                    <Image
+                      src={industry.icon}
+                      alt={industry.name}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#0E1435] mb-4">{industry.name}</h3>
+                  <p className="text-gray-600">{industry.description}</p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+      </Container>
+    </section>
+  )
+}
