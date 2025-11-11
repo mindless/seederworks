@@ -43,7 +43,7 @@ const blogArticles = [
 
 export function BlogSection() {
   return (
-    <section className="py-20 md:py-32 bg-white">
+    <section className="py-20 md:py-32 bg-neutral-100">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -53,7 +53,7 @@ export function BlogSection() {
           className="text-center mb-16"
         >
           <SectionLabel number="08/" className="justify-center" />
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0E1435] mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-800 mb-6">
             News & articles
           </h2>
         </motion.div>
@@ -77,12 +77,12 @@ export function BlogSection() {
                   />
                 </div>
                 <CardContent className="p-6">
-                  <p className="text-sm text-[#3354FF] font-medium mb-2">{article.date}</p>
-                  <h3 className="text-xl font-bold text-[#0E1435] mb-3">{article.title}</h3>
-                  <p className="text-gray-600 mb-4">{article.excerpt}</p>
+                  <p className="text-sm text-brand font-medium mb-2">{article.date}</p>
+                  <h3 className="text-xl font-bold text-neutral-800 mb-3">{article.title}</h3>
+                  <p className="text-neutral-600 mb-4">{article.excerpt}</p>
                   <a
                     href={`/blog/${article.slug}`}
-                    className="text-[#3354FF] hover:text-[#2844dd] font-medium transition-colors"
+                    className="text-brand hover:text-brand-dark font-medium transition-colors"
                   >
                     Read more →
                   </a>

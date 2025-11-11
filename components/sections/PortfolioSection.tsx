@@ -42,7 +42,7 @@ const portfolioItems = [
 
 export function PortfolioSection() {
   return (
-    <section className="py-20 md:py-32 bg-gray-50">
+    <section className="py-20 md:py-32 bg-neutral-50">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -52,10 +52,10 @@ export function PortfolioSection() {
           className="text-center mb-16"
         >
           <SectionLabel number="03/" className="justify-center" />
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0E1435] mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-800 mb-6">
             Our portfolio
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
             Lorem ipsum dolor sit amet consectetur. Sollicitudin pulvinar ipsum ut
             senectus malesuada dui lorem.
           </p>
@@ -75,8 +75,8 @@ export function PortfolioSection() {
                   <div className="relative w-16 h-16 mb-6">
                     <Image src={item.icon} alt={item.name} fill className="object-contain" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#0E1435] mb-3">{item.name}</h3>
-                  <p className="text-gray-600">{item.description}</p>
+                  <h3 className="text-xl font-bold text-neutral-800 mb-3">{item.name}</h3>
+                  <p className="text-neutral-600">{item.description}</p>
                 </CardContent>
               </Card>
             </motion.div>

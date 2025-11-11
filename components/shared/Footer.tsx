@@ -5,28 +5,28 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-white border-t border-[#D8DBE9] py-12">
+    <footer className="bg-neutral-100 border-t border-neutral-200 py-12">
       <Container>
         {/* Footer Top */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Brand Column */}
           <div className="col-span-1">
             <Link href="/" className="inline-block mb-4">
-              <span className="text-2xl font-bold text-[#0E1435]">Invstor X</span>
+              <span className="text-2xl font-bold text-neutral-800">Invstor X</span>
             </Link>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-neutral-600">
               We invest on the companies of the future today
             </p>
           </div>
 
           {/* Pages Column */}
           <div>
-            <h3 className="text-sm font-semibold text-[#0E1435] mb-4">Pages</h3>
+            <h3 className="text-sm font-semibold text-neutral-800 mb-4">Pages</h3>
             <ul className="space-y-2">
               <li>
                 <Link
                   href="/"
-                  className="text-sm text-gray-600 hover:text-[#3354FF] transition-colors"
+                  className="text-sm text-neutral-600 hover:text-brand-dark transition-colors"
                 >
                   Home
                 </Link>
@@ -34,7 +34,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/about"
-                  className="text-sm text-gray-600 hover:text-[#3354FF] transition-colors"
+                  className="text-sm text-neutral-600 hover:text-brand-dark transition-colors"
                 >
                   About
                 </Link>
@@ -42,7 +42,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/blog"
-                  className="text-sm text-gray-600 hover:text-[#3354FF] transition-colors"
+                  className="text-sm text-neutral-600 hover:text-brand-dark transition-colors"
                 >
                   Blog
                 </Link>
@@ -50,7 +50,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/portfolio"
-                  className="text-sm text-gray-600 hover:text-[#3354FF] transition-colors"
+                  className="text-sm text-neutral-600 hover:text-brand-dark transition-colors"
                 >
                   Portfolio
                 </Link>
@@ -60,14 +60,14 @@ export function Footer() {
 
           {/* Utility Pages Column */}
           <div>
-            <h3 className="text-sm font-semibold text-[#0E1435] mb-4">
+            <h3 className="text-sm font-semibold text-neutral-800 mb-4">
               Utility Pages
             </h3>
             <ul className="space-y-2">
               <li>
                 <Link
                   href="/privacy"
-                  className="text-sm text-gray-600 hover:text-[#3354FF] transition-colors"
+                  className="text-sm text-neutral-600 hover:text-brand-dark transition-colors"
                 >
                   Privacy Policy
                 </Link>
@@ -75,7 +75,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/terms"
-                  className="text-sm text-gray-600 hover:text-[#3354FF] transition-colors"
+                  className="text-sm text-neutral-600 hover:text-brand-dark transition-colors"
                 >
                   Terms of Service
                 </Link>
@@ -83,7 +83,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="text-sm text-gray-600 hover:text-[#3354FF] transition-colors"
+                  className="text-sm text-neutral-600 hover:text-brand-dark transition-colors"
                 >
                   Contact
                 </Link>
@@ -93,13 +93,13 @@ export function Footer() {
 
           {/* Social Media Column */}
           <div>
-            <h3 className="text-sm font-semibold text-[#0E1435] mb-4">Follow Us</h3>
+            <h3 className="text-sm font-semibold text-neutral-800 mb-4">Follow Us</h3>
             <div className="flex space-x-4">
               <a
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-[#3354FF] transition-colors"
+                className="text-neutral-600 hover:text-brand transition-colors"
                 aria-label="Facebook"
               >
                 <svg
@@ -115,7 +115,7 @@ export function Footer() {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-[#3354FF] transition-colors"
+                className="text-neutral-600 hover:text-brand transition-colors"
                 aria-label="Instagram"
               >
                 <svg
@@ -131,7 +131,7 @@ export function Footer() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-[#3354FF] transition-colors"
+                className="text-neutral-600 hover:text-brand transition-colors"
                 aria-label="LinkedIn"
               >
                 <svg
@@ -147,7 +147,7 @@ export function Footer() {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-[#3354FF] transition-colors"
+                className="text-neutral-600 hover:text-brand transition-colors"
                 aria-label="X (Twitter)"
               >
                 <svg
@@ -164,15 +164,15 @@ export function Footer() {
         </div>
 
         {/* Footer Bottom */}
-        <div className="pt-8 border-t border-[#D8DBE9]">
+        <div className="pt-8 border-t border-neutral-200">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm text-gray-600 mb-4 md:mb-0">
+            <p className="text-sm text-neutral-600 mb-4 md:mb-0">
               Copyright © {currentYear} Invstor X | All rights reserved
             </p>
             <div className="flex items-center space-x-4">
               <a
                 href="mailto:contact@invstor.com"
-                className="text-sm text-gray-600 hover:text-[#3354FF] transition-colors"
+                className="text-sm text-neutral-600 hover:text-brand-dark transition-colors"
               >
                 contact@invstor.com
               </a>

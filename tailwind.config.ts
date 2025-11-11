@@ -52,22 +52,23 @@ const config: Config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
-        // Framer-specific colors
+        // Earthy natural colors
         neutral: {
-          50: '#F9FAFB',
-          100: '#F3F4F6',
-          200: '#E5E7EB',
-          300: '#D1D5DB',
-          400: '#9CA3AF',
-          500: '#6B7280',
-          600: '#4B5563',
-          700: '#374151',
-          800: '#0E1435', // rgb(14, 20, 53)
-          900: '#111827',
+          50: '#FAF8F3',  // Lighter cream
+          100: '#F5F1E8', // Soft cream
+          200: '#E5DFD0', // Border cream
+          300: '#D4CAAF', // Light beige
+          400: '#B8B3A8', // Light gray-brown
+          500: '#8A857A', // Medium gray-brown
+          600: '#6B6862', // Muted charcoal
+          700: '#4D4943', // Dark brown-gray
+          800: '#2D2A26', // Warm charcoal
+          900: '#1A1816', // Deep charcoal
         },
         brand: {
-          DEFAULT: '#474B64',
-          dark: '#2D303F',
+          DEFAULT: '#6B8E4E', // Primary green
+          dark: '#5a7640',    // Darker green (hover)
+          light: '#8FAF6E',   // Lighter green (accent)
         },
       },
       borderRadius: {

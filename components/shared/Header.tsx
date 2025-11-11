@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Button } from '@/components/ui/Button'
 import { Container } from '@/components/ui/Container'
 import { motion } from 'framer-motion'
@@ -13,56 +14,63 @@ export function Header() {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[#D8DBE9]"
+      className="fixed top-0 left-0 right-0 z-50 bg-neutral-100/95 backdrop-blur-sm border-b border-neutral-200"
     >
       <Container>
         <nav className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <span className="text-2xl font-bold text-[#0E1435]">SeederWorks</span>
+          <Link href="/" className="flex items-center gap-3">
+            <Image
+              src="/images/seederworkslogo.svg"
+              alt="SeederWorks"
+              width={40}
+              height={40}
+              className="h-10 w-auto"
+            />
+            <span className="text-2xl font-bold text-neutral-800">SeederWorks</span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <Link
               href="/why"
-              className="text-sm font-medium text-[#0E1435] hover:text-[#3354FF] transition-colors"
+              className="text-sm font-medium text-neutral-800 hover:text-brand transition-colors"
             >
               Why
             </Link>
             <Link
               href="/model"
-              className="text-sm font-medium text-[#0E1435] hover:text-[#3354FF] transition-colors"
+              className="text-sm font-medium text-neutral-800 hover:text-brand transition-colors"
             >
               Model
             </Link>
             <Link
               href="/focus"
-              className="text-sm font-medium text-[#0E1435] hover:text-[#3354FF] transition-colors"
+              className="text-sm font-medium text-neutral-800 hover:text-brand transition-colors"
             >
               Focus
             </Link>
             <Link
               href="/ventures"
-              className="text-sm font-medium text-[#0E1435] hover:text-[#3354FF] transition-colors"
+              className="text-sm font-medium text-neutral-800 hover:text-brand transition-colors"
             >
               Ventures
             </Link>
             <Link
               href="/invest"
-              className="text-sm font-medium text-[#0E1435] hover:text-[#3354FF] transition-colors"
+              className="text-sm font-medium text-neutral-800 hover:text-brand transition-colors"
             >
               Invest
             </Link>
             <Link
               href="/team"
-              className="text-sm font-medium text-[#0E1435] hover:text-[#3354FF] transition-colors"
+              className="text-sm font-medium text-neutral-800 hover:text-brand transition-colors"
             >
               Team
             </Link>
             <Link
               href="/connect"
-              className="text-sm font-medium text-[#0E1435] hover:text-[#3354FF] transition-colors"
+              className="text-sm font-medium text-neutral-800 hover:text-brand transition-colors"
             >
               Connect
             </Link>
@@ -113,48 +121,48 @@ export function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden py-4 border-t border-[#D8DBE9]"
+            className="md:hidden py-4 border-t border-neutral-200"
           >
             <div className="flex flex-col space-y-4">
               <Link
                 href="/why"
-                className="text-sm font-medium text-[#0E1435] hover:text-[#3354FF] transition-colors"
+                className="text-sm font-medium text-neutral-800 hover:text-brand transition-colors"
               >
                 Why
               </Link>
               <Link
                 href="/model"
-                className="text-sm font-medium text-[#0E1435] hover:text-[#3354FF] transition-colors"
+                className="text-sm font-medium text-neutral-800 hover:text-brand transition-colors"
               >
                 Model
               </Link>
               <Link
                 href="/focus"
-                className="text-sm font-medium text-[#0E1435] hover:text-[#3354FF] transition-colors"
+                className="text-sm font-medium text-neutral-800 hover:text-brand transition-colors"
               >
                 Focus
               </Link>
               <Link
                 href="/ventures"
-                className="text-sm font-medium text-[#0E1435] hover:text-[#3354FF] transition-colors"
+                className="text-sm font-medium text-neutral-800 hover:text-brand transition-colors"
               >
                 Ventures
               </Link>
               <Link
                 href="/invest"
-                className="text-sm font-medium text-[#0E1435] hover:text-[#3354FF] transition-colors"
+                className="text-sm font-medium text-neutral-800 hover:text-brand transition-colors"
               >
                 Invest
               </Link>
               <Link
                 href="/team"
-                className="text-sm font-medium text-[#0E1435] hover:text-[#3354FF] transition-colors"
+                className="text-sm font-medium text-neutral-800 hover:text-brand transition-colors"
               >
                 Team
               </Link>
               <Link
                 href="/connect"
-                className="text-sm font-medium text-[#0E1435] hover:text-[#3354FF] transition-colors"
+                className="text-sm font-medium text-neutral-800 hover:text-brand transition-colors"
               >
                 Connect
               </Link>

@@ -15,7 +15,7 @@ export function LogoCarousel() {
   const duplicatedLogos = [...logos, ...logos, ...logos]
 
   return (
-    <section className="py-16 bg-gray-50 overflow-hidden">
+    <section className="py-16 bg-neutral-50 overflow-hidden">
       <div className="relative">
         <motion.div
           className="flex gap-24"
@@ -34,7 +34,7 @@ export function LogoCarousel() {
           {duplicatedLogos.map((logo, index) => (
             <div
               key={index}
-              className="flex items-center justify-center flex-shrink-0 text-gray-400"
+              className="flex items-center justify-center flex-shrink-0 text-neutral-400"
               style={{ width: logo.width, height: logo.height }}
             >
               <span className="text-2xl font-bold">{logo.name}</span>

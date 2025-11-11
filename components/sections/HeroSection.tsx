@@ -1,14 +1,15 @@
 'use client'
 
-import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { SectionLabel } from '@/components/ui/SectionLabel'
+import PrismaticBurst from '@/components/PrismaticBurst'
+import Iridescence from '@/components/Iridescence'
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center bg-white overflow-hidden">
+    <section className="relative min-h-screen flex items-center bg-neutral-100 overflow-hidden">
       <div className="w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen lg:min-h-0">
           {/* Left Column - Content */}
@@ -20,10 +21,10 @@ export function HeroSection() {
               className="max-w-2xl"
             >
               <SectionLabel number="Where Capital Meets Creation" />
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0E1435] mb-6 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-800 mb-6 leading-tight">
                 We build founders, not just startups.
               </h1>
-              <p className="text-lg text-gray-600 mb-8 max-w-xl">
+              <p className="text-lg text-neutral-600 mb-8 max-w-xl">
                 SeederWorks is an AI Venture Studio & Fund. We seed, build, and scale high-potential companies across Southeast Asia—faster, smarter, founder-first.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -35,33 +36,67 @@ export function HeroSection() {
                   Invest with Us
                 </Button>
               </div>
-              <div className="flex flex-col sm:flex-row gap-6 text-sm text-gray-600">
+              <div className="flex flex-col sm:flex-row gap-6 text-sm text-neutral-600">
                 <div className="flex items-center gap-2">
                   <span>Early liquidity aim:</span>
-                  <span className="font-semibold text-[#0E1435]">~24 months</span>
+                  <span className="font-semibold text-neutral-800">~24 months</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span>Target:</span>
-                  <span className="font-semibold text-[#0E1435]">7.5× ROI · 48% IRR</span>
+                  <span className="font-semibold text-neutral-800">7.5× ROI · 48% IRR</span>
                 </div>
               </div>
             </motion.div>
           </div>
 
-          {/* Right Column - Hero Image */}
+          {/* Right Column - Layered Effects */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative min-h-[400px] lg:min-h-screen"
           >
-            <Image
-              src="/images/wps0HzfeV0ccLuQRpWAByO5xUsE.png"
-              alt="We Invest In The Companies Of The Future"
-              fill
-              className="object-cover"
-              priority
-            />
+            <div className="absolute inset-0 w-full h-full">
+              {/* Background Layer - Iridescence */}
+              <div className="absolute inset-0 w-full h-full">
+                <Iridescence
+                  color={[0.42, 0.56, 0.31]}
+                  speed={0.5}
+                  amplitude={0.15}
+                  mouseReact={true}
+                />
+              </div>
+
+              {/* Foreground Layer - Masked Prismatic Burst */}
+              <div className="absolute inset-0 w-full h-full flex items-center justify-center">
+                <div
+                  style={{
+                    width: '70%',
+                    height: '70%',
+                    maskImage: 'url(/images/seederworkslogo.svg)',
+                    maskSize: 'contain',
+                    maskPosition: 'center',
+                    maskRepeat: 'no-repeat',
+                    WebkitMaskImage: 'url(/images/seederworkslogo.svg)',
+                    WebkitMaskSize: 'contain',
+                    WebkitMaskPosition: 'center',
+                    WebkitMaskRepeat: 'no-repeat',
+                  }}
+                  className="w-full h-full"
+                >
+                  <PrismaticBurst
+                    colors={['#6B8E4E', '#8FAF6E', '#9BC57D']}
+                    animationType="hover"
+                    intensity={2}
+                    speed={0.5}
+                    distort={0}
+                    rayCount={0}
+                    hoverDampness={0.25}
+                    mixBlendMode="normal"
+                  />
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>

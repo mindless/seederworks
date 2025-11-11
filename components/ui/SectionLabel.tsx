@@ -9,7 +9,7 @@ export function SectionLabel({ number, className }: SectionLabelProps) {
   return (
     <span
       className={cn(
-        'inline-block text-sm font-medium text-[#3354FF] mb-4',
+        'inline-block text-sm font-medium text-brand mb-4',
         className
       )}
     >

@@ -16,7 +16,7 @@ const stats = [
 
 export function AboutSection() {
   return (
-    <section className="py-20 md:py-32 bg-white">
+    <section className="py-20 md:py-32 bg-neutral-100">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column - Content */}
@@ -28,19 +28,19 @@ export function AboutSection() {
             className="lg:col-span-4"
           >
             <SectionLabel number="02/" />
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0E1435] mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-800 mb-6">
               About our investment firm
             </h2>
             <Button variant="primary" size="lg" className="gap-2 mb-8">
               Pitch your startup
               <ArrowRight className="w-5 h-5" />
             </Button>
-            <p className="text-base text-gray-600 mb-6">
+            <p className="text-base text-neutral-600 mb-6">
               Lorem ipsum dolor amet consectetur diam nulla nullam mauris turpis dis mi
               sit. In a nunc id lectus facilisi justo eu egestas amet tellus felis leo
               vestibulum ut neque mus. Tempus arcu metus.
             </p>
-            <p className="text-base text-gray-600">
+            <p className="text-base text-neutral-600">
               Lorem ipsum dolor amet consectetur diam nulla nullam mauris turpis dis mi
               sit. In a nunc id lectus facilisi justo eu.
             </p>
@@ -82,9 +82,9 @@ export function AboutSection() {
                 className="border-b border-gray-200 pb-6 last:border-0"
               >
                 <div className="text-right">
-                  <p className="text-base text-gray-600 mb-2">{stat.label}</p>
-                  <p className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#0E1435] flex items-center justify-end gap-2">
-                    <span className="text-[#3354FF]">+</span>
+                  <p className="text-base text-neutral-600 mb-2">{stat.label}</p>
+                  <p className="text-5xl md:text-6xl lg:text-7xl font-bold text-neutral-800 flex items-center justify-end gap-2">
+                    <span className="text-brand">+</span>
                     <span>{stat.value.replace('+', '')}</span>
                   </p>
                 </div>

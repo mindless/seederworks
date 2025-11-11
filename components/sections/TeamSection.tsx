@@ -39,7 +39,7 @@ const teamMembers = [
 
 export function TeamSection() {
   return (
-    <section className="py-20 md:py-32 bg-gray-50">
+    <section className="py-20 md:py-32 bg-neutral-50">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -49,7 +49,7 @@ export function TeamSection() {
           className="text-center mb-16"
         >
           <SectionLabel number="07/" className="justify-center" />
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0E1435] mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-800 mb-6">
             Our partners
           </h2>
         </motion.div>
@@ -68,9 +68,9 @@ export function TeamSection() {
                   <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
                     <Image src={member.avatar} alt={member.name} fill className="object-cover" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#0E1435] mb-2">{member.name}</h3>
-                  <p className="text-sm text-[#3354FF] font-medium mb-3">{member.title}</p>
-                  <p className="text-gray-600 text-sm">{member.bio}</p>
+                  <h3 className="text-xl font-bold text-neutral-800 mb-2">{member.name}</h3>
+                  <p className="text-sm text-brand font-medium mb-3">{member.title}</p>
+                  <p className="text-neutral-600 text-sm">{member.bio}</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -80,7 +80,7 @@ export function TeamSection() {
         <div className="text-center">
           <a
             href="/team"
-            className="text-[#3354FF] hover:text-[#2844dd] font-medium transition-colors"
+            className="text-brand hover:text-brand-dark font-medium transition-colors"
           >
             Browse all team members →
           </a>

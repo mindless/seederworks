@@ -32,7 +32,7 @@ const industries = [
 
 export function IndustriesSection() {
   return (
-    <section className="py-20 md:py-32 bg-white">
+    <section className="py-20 md:py-32 bg-neutral-100">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -42,7 +42,7 @@ export function IndustriesSection() {
           className="text-center mb-16"
         >
           <SectionLabel number="05/" className="justify-center" />
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0E1435] mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-800 mb-6">
             Industries we invest in
           </h2>
         </motion.div>
@@ -66,8 +66,8 @@ export function IndustriesSection() {
                       className="object-contain"
                     />
                   </div>
-                  <h3 className="text-2xl font-bold text-[#0E1435] mb-4">{industry.name}</h3>
-                  <p className="text-gray-600">{industry.description}</p>
+                  <h3 className="text-2xl font-bold text-neutral-800 mb-4">{industry.name}</h3>
+                  <p className="text-neutral-600">{industry.description}</p>
                 </CardContent>
               </Card>
             </motion.div>
