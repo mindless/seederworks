@@ -9,24 +9,24 @@ import { Card, CardContent } from '@/components/ui/Card'
 const industries = [
   {
     id: '1',
-    name: 'Mobile apps',
-    icon: '/images/xi5XFBLWLG7Nshsa1QAgviBmpCU.png',
+    name: 'AI Systems & Agents',
+    icon: '/images/ai-systems-agents.png',
     description:
-      'Lorem ipsum dolor sit amet consectetur. Sollicitudin pulvinar ipsum ut senectus malesuada dui.',
+      'Voice + workflow agents that automate intelligence across sales, ops, and CX.',
   },
   {
     id: '2',
-    name: 'Hardware companies',
-    icon: '/images/5ZfAfDkgRfqGjBM833DdhMREBc.png',
+    name: 'Digital IP & Platforms',
+    icon: '/images/digital-ip-platforms.png',
     description:
-      'Lorem ipsum dolor sit amet consectetur. Sollicitudin pulvinar ipsum ut senectus malesuada dui.',
+      'Ownable IP and platforms in media, commerce, and gaming with network effects.',
   },
   {
     id: '3',
-    name: 'Software companies',
-    icon: '/images/4Si4LHeUDAhbmWjyOvWVLLblAs.png',
+    name: 'Data-Driven Ventures',
+    icon: '/images/data-driven-ventures.png',
     description:
-      'Lorem ipsum dolor sit amet consectetur. Sollicitudin pulvinar ipsum ut senectus malesuada dui.',
+      'Behavioral data informs product bets, growth loops, and capital allocation.',
   },
 ]
 
@@ -41,9 +41,8 @@ export function IndustriesSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <SectionLabel number="05/" className="justify-center" />
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-800 mb-6">
-            Industries we invest in
+            Focus Areas
           </h2>
         </motion.div>
 

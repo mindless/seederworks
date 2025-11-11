@@ -3,11 +3,10 @@
 import { motion } from 'framer-motion'
 
 const logos = [
-  { name: 'Company', width: 183, height: 34 },
-  { name: 'Startup', width: 151, height: 28 },
-  { name: 'Enterprise', width: 190, height: 34 },
-  { name: 'Venture', width: 149, height: 32 },
-  { name: 'Organization', width: 230, height: 33 },
+  { name: 'Founder First', width: 200, height: 34 },
+  { name: 'Capital Efficient', width: 220, height: 34 },
+  { name: 'AI Driven', width: 150, height: 34 },
+  { name: 'Data-Led', width: 150, height: 34 },
 ]
 
 export function LogoCarousel() {

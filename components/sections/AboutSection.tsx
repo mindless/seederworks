@@ -8,10 +8,10 @@ import { SectionLabel } from '@/components/ui/SectionLabel'
 import { Button } from '@/components/ui/Button'
 
 const stats = [
-  { label: 'Companies', value: '+200' },
-  { label: 'Team members', value: '+50' },
-  { label: 'Capital investment', value: '+5B' },
-  { label: 'Years of experience', value: '+15' },
+  { label: 'Target Portfolio ROI', value: '×7.5' },
+  { label: 'Target IRR', value: '+48%' },
+  { label: 'Liquidity Aim', value: '~24 mo' },
+  { label: 'Core Hubs', value: 'SG · TH · PH' },
 ]
 
 export function AboutSection() {
@@ -27,23 +27,22 @@ export function AboutSection() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-4"
           >
-            <SectionLabel number="02/" />
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-800 mb-6">
-              About our investment firm
+              Why SeederWorks
             </h2>
             <Button variant="primary" size="lg" className="gap-2 mb-8">
               Pitch your startup
               <ArrowRight className="w-5 h-5" />
             </Button>
             <p className="text-base text-neutral-600 mb-6">
-              Lorem ipsum dolor amet consectetur diam nulla nullam mauris turpis dis mi
-              sit. In a nunc id lectus facilisi justo eu egestas amet tellus felis leo
-              vestibulum ut neque mus. Tempus arcu metus.
+              The world doesn't need more startups—it needs <strong>better</strong> ones. We bridge bold founders and intelligent capital with hands-on build teams, market access, and data-driven decisioning. The result: companies built for longevity, not hype.
             </p>
-            <p className="text-base text-neutral-600">
-              Lorem ipsum dolor amet consectetur diam nulla nullam mauris turpis dis mi
-              sit. In a nunc id lectus facilisi justo eu.
-            </p>
+            <div className="text-sm text-neutral-600 space-y-3">
+              <p><strong>Founder-First:</strong> Aligned incentives, operational support, and fair economics.</p>
+              <p><strong>Studio + Fund:</strong> Revenue from client work de-risks early venture bets.</p>
+              <p><strong>SEA Edge:</strong> Born in Southeast Asia with cross-border execution DNA.</p>
+              <p><strong>Data-Led:</strong> Behavioral data guides product, growth, and capital allocation.</p>
+            </div>
           </motion.div>
 
           {/* Center Column - Illustration */}
@@ -54,12 +53,12 @@ export function AboutSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:col-span-4 flex items-center justify-center"
           >
-            <div className="relative w-full max-w-[400px] md:max-w-[500px] lg:max-w-[600px] aspect-square rounded-full overflow-hidden">
+            <div className="relative w-full max-w-[400px] md:max-w-[500px] lg:max-w-[600px] aspect-square">
               <Image
-                src="/images/DgI3Pbcg1IJBLRdyEGZKvrYQ.png"
-                alt="About Our Investment Firm"
+                src="/images/seedertree.png"
+                alt="Why SeederWorks"
                 fill
-                className="object-cover"
+                className="object-contain"
               />
             </div>
           </motion.div>
@@ -79,13 +78,17 @@ export function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
-                className="border-b border-gray-200 pb-6 last:border-0"
+                className="border-b border-neutral-200 pb-6 last:border-0"
               >
                 <div className="text-right">
                   <p className="text-base text-neutral-600 mb-2">{stat.label}</p>
-                  <p className="text-5xl md:text-6xl lg:text-7xl font-bold text-neutral-800 flex items-center justify-end gap-2">
-                    <span className="text-brand">+</span>
-                    <span>{stat.value.replace('+', '')}</span>
+                  <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-800 flex items-center justify-end gap-2">
+                    {(stat.value.startsWith('×') || stat.value.startsWith('~') || stat.value.startsWith('+')) && (
+                      <span className="text-brand">
+                        {stat.value.startsWith('×') ? '×' : stat.value.startsWith('~') ? '~' : '+'}
+                      </span>
+                    )}
+                    <span>{stat.value.replace(/^[+×~]/, '')}</span>
                   </p>
                 </div>
               </motion.div>

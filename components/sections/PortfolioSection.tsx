@@ -10,33 +10,39 @@ import { Card, CardContent } from '@/components/ui/Card'
 const portfolioItems = [
   {
     id: '1',
-    name: 'Company',
+    name: 'SnapSell',
     icon: '/images/Rt3f2BMBCoQiScIkRbMOrpebi6c.png',
-    description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
+    description: 'Trust-first social commerce with escrow.',
   },
   {
     id: '2',
-    name: 'Startup',
+    name: 'RunwaySpot',
     icon: '/images/AwCbVo0lK8X5P5WgD9SRIBDmk9o.png',
-    description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
+    description: 'Casting made simple for SEA\'s creator economy.',
   },
   {
     id: '3',
-    name: 'Organization',
+    name: 'Vox Studios',
     icon: '/images/hqW0C4mTfYq9x5KTwODoaqZ84Jg.png',
-    description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
+    description: 'Voice-driven AI agents for real conversations.',
   },
   {
     id: '4',
-    name: 'Enterprise',
+    name: 'Zuma',
     icon: '/images/9jvs0K4uPZE1BB0TEVhNoK1vns.png',
-    description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
+    description: 'Family experience IP that bridges generations.',
   },
   {
     id: '5',
-    name: 'Venture',
+    name: 'NoLMTZ',
     icon: '/images/gYcHetNLP85EpoinJaI2AhLL8dU.png',
-    description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
+    description: 'Video games designed for neurodiverse minds.',
+  },
+  {
+    id: '6',
+    name: 'Project Artemis',
+    icon: '/images/gYcHetNLP85EpoinJaI2AhLL8dU.png',
+    description: 'AI for insurance distribution and retention.',
   },
 ]
 
@@ -51,13 +57,11 @@ export function PortfolioSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <SectionLabel number="03/" className="justify-center" />
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-800 mb-6">
-            Our portfolio
+            Ventures in Motion
           </h2>
           <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-            Lorem ipsum dolor sit amet consectetur. Sollicitudin pulvinar ipsum ut
-            senectus malesuada dui lorem.
+            A living portfolio of seeds and spin-outs from our studio network.
           </p>
         </motion.div>
 

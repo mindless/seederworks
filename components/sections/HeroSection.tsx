@@ -10,17 +10,66 @@ import Iridescence from '@/components/Iridescence'
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center bg-neutral-100 overflow-hidden">
-      <div className="w-full">
+      {/* Background Graphic - Mobile Only */}
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        className="absolute inset-0 w-full h-full opacity-30 lg:hidden"
+      >
+        <div className="absolute inset-0 w-full h-full">
+          {/* Background Layer - Iridescence */}
+          <div className="absolute inset-0 w-full h-full">
+            <Iridescence
+              color={[0.42, 0.56, 0.31]}
+              speed={0.5}
+              amplitude={0.15}
+              mouseReact={true}
+            />
+          </div>
+
+          {/* Foreground Layer - Masked Prismatic Burst */}
+          <div className="absolute inset-0 w-full h-full flex items-center justify-center">
+            <div
+              style={{
+                width: '70%',
+                height: '70%',
+                maskImage: 'url(/images/seederworkslogo.svg)',
+                maskSize: 'contain',
+                maskPosition: 'center',
+                maskRepeat: 'no-repeat',
+                WebkitMaskImage: 'url(/images/seederworkslogo.svg)',
+                WebkitMaskSize: 'contain',
+                WebkitMaskPosition: 'center',
+                WebkitMaskRepeat: 'no-repeat',
+              }}
+              className="w-full h-full"
+            >
+              <PrismaticBurst
+                colors={['#6B8E4E', '#8FAF6E', '#9BC57D']}
+                animationType="hover"
+                intensity={2}
+                speed={0.5}
+                distort={0}
+                rayCount={0}
+                hoverDampness={0.25}
+                mixBlendMode="normal"
+              />
+            </div>
+          </div>
+        </div>
+      </motion.div>
+
+      <div className="w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen lg:min-h-0">
           {/* Left Column - Content */}
-          <div className="flex items-center py-32 lg:py-0 px-4 sm:px-6 lg:pl-[calc((100vw-80rem)/2+2rem)] lg:pr-16">
+          <div className="flex items-center justify-center lg:justify-start py-32 lg:py-0 px-6 sm:px-8 lg:pl-[calc((100vw-80rem)/2+2rem)] lg:pr-16">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              className="max-w-2xl"
+              className="max-w-2xl w-full bg-white/80 lg:bg-transparent backdrop-blur-sm lg:backdrop-blur-none p-8 lg:p-0 rounded-2xl lg:rounded-none text-center lg:text-left"
             >
-              <SectionLabel number="Where Capital Meets Creation" />
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-800 mb-6 leading-tight">
                 We build founders, not just startups.
               </h1>
@@ -49,12 +98,12 @@ export function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Right Column - Layered Effects */}
+          {/* Right Column - Layered Effects (Desktop Only) */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative min-h-[400px] lg:min-h-screen"
+            className="hidden lg:block relative lg:min-h-screen"
           >
             <div className="absolute inset-0 w-full h-full">
               {/* Background Layer - Iridescence */}

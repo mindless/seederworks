@@ -28,7 +28,6 @@ export function CtaSection() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-4xl mx-auto"
         >
-          <SectionLabel number="06/" className="justify-center" />
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-800 mb-6">
             We invest in the companies of the future, today
           </h2>
