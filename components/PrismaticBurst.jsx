@@ -322,7 +322,14 @@ const PrismaticBurst = ({
       io = new IntersectionObserver(
         entries => {
           if (entries[0]) {
+            const wasVisible = isVisibleRef.current;
             isVisibleRef.current = entries[0].isIntersecting;
+
+            // Resume animation loop when becoming visible
+            if (entries[0].isIntersecting && !wasVisible && raf === 0) {
+              last = performance.now(); // Reset timing to prevent jumps
+              raf = requestAnimationFrame(update);
+            }
           }
         },
         { root: null, threshold: 0.01 }
@@ -341,12 +348,14 @@ const PrismaticBurst = ({
       const dt = Math.max(0, now - last) * 0.001;
       last = now;
       const visible = isVisibleRef.current && !document.hidden;
-      if (!pausedRef.current) accumTime += dt;
 
       if (!visible) {
-        raf = requestAnimationFrame(update);
+        // Stop the animation loop completely when not visible
+        raf = 0;
         return;
       }
+
+      if (!pausedRef.current) accumTime += dt;
 
       const tau = 0.02 + Math.max(0, Math.min(1, hoverDampRef.current)) * 0.5;
       const alpha = 1 - Math.exp(-dt / tau);

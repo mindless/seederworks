@@ -49,6 +49,7 @@ void main() {
 export default function Iridescence({ color = [1, 1, 1], speed = 1.0, amplitude = 0.1, mouseReact = true, ...rest }) {
   const ctnDom = useRef(null);
   const mousePos = useRef({ x: 0.5, y: 0.5 });
+  const isVisibleRef = useRef(true);
 
   useEffect(() => {
     if (!ctnDom.current) return;
@@ -90,12 +91,21 @@ export default function Iridescence({ color = [1, 1, 1], speed = 1.0, amplitude 
     });
 
     const mesh = new Mesh(gl, { geometry, program });
-    let animateId;
+    let animateId = 0;
+    let lastTime = 0;
 
     function update(t) {
+      // Check visibility - stop animation loop if not visible
+      const visible = isVisibleRef.current && !document.hidden;
+      if (!visible) {
+        animateId = 0;
+        return;
+      }
+
       animateId = requestAnimationFrame(update);
       program.uniforms.uTime.value = t * 0.001;
       renderer.render({ scene: mesh });
+      lastTime = t;
     }
     animateId = requestAnimationFrame(update);
     ctn.appendChild(gl.canvas);
@@ -112,8 +122,40 @@ export default function Iridescence({ color = [1, 1, 1], speed = 1.0, amplitude 
       ctn.addEventListener('mousemove', handleMouseMove);
     }
 
+    // Viewport detection - pause when not visible
+    let io = null;
+    if ('IntersectionObserver' in window) {
+      io = new IntersectionObserver(
+        entries => {
+          if (entries[0]) {
+            const wasVisible = isVisibleRef.current;
+            isVisibleRef.current = entries[0].isIntersecting;
+
+            // Resume animation loop when becoming visible
+            if (entries[0].isIntersecting && !wasVisible && animateId === 0) {
+              lastTime = performance.now();
+              animateId = requestAnimationFrame(update);
+            }
+          }
+        },
+        { root: null, threshold: 0.01 }
+      );
+      io.observe(ctn);
+    }
+
+    // Handle page visibility changes
+    function handleVisibilityChange() {
+      if (!document.hidden && isVisibleRef.current && animateId === 0) {
+        lastTime = performance.now();
+        animateId = requestAnimationFrame(update);
+      }
+    }
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
     return () => {
       cancelAnimationFrame(animateId);
+      io?.disconnect();
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
       window.removeEventListener('resize', resize);
       if (mouseReact) {
         ctn.removeEventListener('mousemove', handleMouseMove);

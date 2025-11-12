@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
-import { SectionLabel } from '@/components/ui/SectionLabel'
+import { GlassSurface } from '@/components/ui/GlassSurface'
 import PrismaticBurst from '@/components/PrismaticBurst'
 import Iridescence from '@/components/Iridescence'
 
@@ -68,12 +68,20 @@ export function HeroSection() {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              className="max-w-2xl w-full bg-white/80 lg:bg-transparent backdrop-blur-sm lg:backdrop-blur-none p-8 lg:p-0 rounded-2xl lg:rounded-none text-center lg:text-left"
+              className="max-w-2xl w-full"
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-800 mb-6 leading-tight">
+              <GlassSurface
+                blur="lg"
+                opacity={15}
+                border={true}
+                borderColor="rgba(255, 255, 255, 0.3)"
+                shadow={true}
+                className="lg:bg-transparent lg:backdrop-blur-none lg:border-0 lg:shadow-none p-8 lg:p-0 rounded-2xl lg:rounded-none text-center lg:text-left"
+              >
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-800 lg:text-neutral-800 mb-6 leading-tight">
                 We build founders, not just startups.
               </h1>
-              <p className="text-lg text-neutral-600 mb-8 max-w-xl">
+              <p className="text-lg text-white lg:text-neutral-600 mb-8 max-w-xl">
                 SeederWorks is an AI Venture Studio & Fund. We seed, build, and scale high-potential companies across Southeast Asia—faster, smarter, founder-first.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -85,16 +93,17 @@ export function HeroSection() {
                   Invest with Us
                 </Button>
               </div>
-              <div className="flex flex-col sm:flex-row gap-6 text-sm text-neutral-600">
+              <div className="flex flex-col sm:flex-row gap-6 text-sm text-white/90 lg:text-neutral-600">
                 <div className="flex items-center gap-2">
                   <span>Early liquidity aim:</span>
-                  <span className="font-semibold text-neutral-800">~24 months</span>
+                  <span className="font-semibold text-white lg:text-neutral-800">~24 months</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span>Target:</span>
-                  <span className="font-semibold text-neutral-800">7.5× ROI · 48% IRR</span>
+                  <span className="font-semibold text-white lg:text-neutral-800">7.5× ROI · 48% IRR</span>
                 </div>
               </div>
+              </GlassSurface>
             </motion.div>
           </div>
 

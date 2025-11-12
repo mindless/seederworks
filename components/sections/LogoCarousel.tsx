@@ -1,6 +1,7 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, useAnimation } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
 
 const logos = [
   { name: 'Founder First', width: 200, height: 34 },
@@ -12,23 +13,50 @@ const logos = [
 export function LogoCarousel() {
   // Duplicate logos for seamless loop
   const duplicatedLogos = [...logos, ...logos, ...logos]
+  const [isVisible, setIsVisible] = useState(true)
+  const sectionRef = useRef<HTMLElement>(null)
+  const controls = useAnimation()
 
-  return (
-    <section className="py-16 bg-neutral-50 overflow-hidden">
-      <div className="relative">
-        <motion.div
-          className="flex gap-24"
-          animate={{
+  // Viewport detection
+  useEffect(() => {
+    if (!sectionRef.current) return
+
+    const observer = new IntersectionObserver(
+      entries => {
+        const visible = entries[0].isIntersecting
+        setIsVisible(visible)
+
+        if (visible) {
+          // Resume animation
+          controls.start({
             x: [0, -100 * logos.length],
-          }}
-          transition={{
-            x: {
+            transition: {
               repeat: Infinity,
               repeatType: 'loop',
               duration: 20,
               ease: 'linear',
             },
-          }}
+          })
+        } else {
+          // Pause animation
+          controls.stop()
+        }
+      },
+      { root: null, threshold: 0.01 }
+    )
+
+    observer.observe(sectionRef.current)
+
+    return () => observer.disconnect()
+  }, [controls])
+
+  return (
+    <section ref={sectionRef} className="py-16 bg-neutral-50 overflow-hidden">
+      <div className="relative">
+        <motion.div
+          className="flex gap-24"
+          animate={controls}
+          initial={{ x: 0 }}
         >
           {duplicatedLogos.map((logo, index) => (
             <div

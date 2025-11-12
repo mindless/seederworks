@@ -3,7 +3,6 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Container } from '@/components/ui/Container'
-import { SectionLabel } from '@/components/ui/SectionLabel'
 import { Card, CardContent } from '@/components/ui/Card'
 
 const industries = [
