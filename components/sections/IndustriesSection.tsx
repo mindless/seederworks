@@ -1,7 +1,7 @@
 'use client'
 
-import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { Brain, Monitor, TrendingUp } from 'lucide-react'
 import { Container } from '@/components/ui/Container'
 import { Card, CardContent } from '@/components/ui/Card'
 
@@ -9,21 +9,21 @@ const industries = [
   {
     id: '1',
     name: 'AI Systems & Agents',
-    icon: '/images/ai-systems-agents.png',
+    icon: Brain,
     description:
       'Voice + workflow agents that automate intelligence across sales, ops, and CX.',
   },
   {
     id: '2',
     name: 'Digital IP & Platforms',
-    icon: '/images/digital-ip-platforms.png',
+    icon: Monitor,
     description:
       'Ownable IP and platforms in media, commerce, and gaming with network effects.',
   },
   {
     id: '3',
     name: 'Data-Driven Ventures',
-    icon: '/images/data-driven-ventures.png',
+    icon: TrendingUp,
     description:
       'Behavioral data informs product bets, growth loops, and capital allocation.',
   },
@@ -56,13 +56,10 @@ export function IndustriesSection() {
             >
               <Card className="h-full hover:shadow-lg transition-shadow">
                 <CardContent className="p-8 text-center">
-                  <div className="relative w-full h-48 mb-6">
-                    <Image
-                      src={industry.icon}
-                      alt={industry.name}
-                      fill
-                      className="object-contain"
-                    />
+                  <div className="flex justify-center mb-6">
+                    <div className="p-6 bg-indigo-100 rounded-2xl">
+                      <industry.icon className="w-16 h-16 text-indigo-600" />
+                    </div>
                   </div>
                   <h3 className="text-2xl font-bold text-neutral-800 mb-4">{industry.name}</h3>
                   <p className="text-neutral-600">{industry.description}</p>

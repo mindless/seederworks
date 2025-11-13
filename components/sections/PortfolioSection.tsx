@@ -12,7 +12,8 @@ const portfolioItems = [
     name: 'SnapSell',
     icon: '/images/Rt3f2BMBCoQiScIkRbMOrpebi6c.png',
     description: 'Trust-first social commerce with escrow.',
-    hoverColor: 'hover:bg-violet-100',
+    bgColor: 'bg-violet-500',
+    hoverColor: 'hover:bg-violet-600',
     gridClass: 'md:col-span-1 md:row-span-1',
   },
   {
@@ -20,7 +21,8 @@ const portfolioItems = [
     name: 'RunwaySpot',
     icon: '/images/AwCbVo0lK8X5P5WgD9SRIBDmk9o.png',
     description: 'Casting made simple for SEA\'s creator economy.',
-    hoverColor: 'hover:bg-indigo-500',
+    bgColor: 'bg-blue-500',
+    hoverColor: 'hover:bg-blue-600',
     gridClass: 'md:col-span-1 md:row-span-1',
   },
   {
@@ -28,7 +30,8 @@ const portfolioItems = [
     name: 'Vox Studios',
     icon: '/images/hqW0C4mTfYq9x5KTwODoaqZ84Jg.png',
     description: 'Voice-driven AI agents for real conversations.',
-    hoverColor: 'hover:bg-blue-100',
+    bgColor: 'bg-indigo-500',
+    hoverColor: 'hover:bg-indigo-600',
     gridClass: 'md:col-span-1 md:row-span-1',
   },
   {
@@ -36,7 +39,8 @@ const portfolioItems = [
     name: 'Zuma',
     icon: '/images/9jvs0K4uPZE1BB0TEVhNoK1vns.png',
     description: 'Family experience IP that bridges generations.',
-    hoverColor: 'hover:bg-purple-100',
+    bgColor: 'bg-purple-500',
+    hoverColor: 'hover:bg-purple-600',
     gridClass: 'md:col-span-1 md:row-span-1',
   },
   {
@@ -44,7 +48,8 @@ const portfolioItems = [
     name: 'NoLMTZ',
     icon: '/images/gYcHetNLP85EpoinJaI2AhLL8dU.png',
     description: 'Video games designed for neurodiverse minds.',
-    hoverColor: 'hover:bg-pink-100',
+    bgColor: 'bg-pink-500',
+    hoverColor: 'hover:bg-pink-600',
     gridClass: 'md:col-span-1 md:row-span-1',
   },
   {
@@ -52,7 +57,8 @@ const portfolioItems = [
     name: 'Project Artemis',
     icon: '/images/gYcHetNLP85EpoinJaI2AhLL8dU.png',
     description: 'AI for insurance distribution and retention.',
-    hoverColor: 'hover:bg-slate-100',
+    bgColor: 'bg-slate-500',
+    hoverColor: 'hover:bg-slate-600',
     gridClass: 'md:col-span-1 md:row-span-1',
   },
 ]
@@ -84,23 +90,23 @@ export function PortfolioSection() {
               whileHover={{ scale: 1.02 }}
               className={`group relative ${item.gridClass}`}
             >
-              <div className={`h-full rounded-2xl border border-neutral-200 bg-white transition-all duration-300 ${item.hoverColor} hover:border-transparent relative overflow-hidden`}>
+              <div className={`h-full rounded-2xl ${item.bgColor} ${item.hoverColor} transition-all duration-300 relative overflow-hidden flex flex-col`}>
                 {/* Arrow Icon */}
                 <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
-                  <ArrowUpRight className="w-6 h-6 text-neutral-800" />
+                  <ArrowUpRight className="w-6 h-6 text-white" />
                 </div>
 
                 {/* Centered Icon */}
-                <div className="absolute inset-0 flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-2">
-                  <div className="relative w-16 h-16">
+                <div className="flex-1 flex items-center justify-center">
+                  <div className="relative w-24 h-24">
                     <Image src={item.icon} alt={item.name} fill className="object-contain" />
                   </div>
                 </div>
 
                 {/* Bottom-left Content */}
-                <div className="absolute bottom-0 left-0 p-8 transition-transform duration-300 group-hover:-translate-y-1">
-                  <h3 className="text-xl font-bold text-neutral-800 mb-3">{item.name}</h3>
-                  <p className="text-sm text-neutral-600">{item.description}</p>
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold text-white mb-1">{item.name}</h3>
+                  <p className="text-sm text-white/90">{item.description}</p>
                 </div>
               </div>
             </motion.div>

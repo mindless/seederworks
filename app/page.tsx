@@ -13,9 +13,9 @@ export default function Home() {
       <HeroSection />
       <LogoCarousel />
       <AboutSection />
+      <OurApproachSection />
       <PortfolioSection />
       <IndustriesSection />
-      <OurApproachSection />
       <CtaSection />
       <TeamSection />
     </>

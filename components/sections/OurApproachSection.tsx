@@ -10,26 +10,26 @@ import { Button } from '@/components/ui/Button'
 const approachSteps = [
   {
     number: '01',
-    title: 'Discovery',
-    description: 'We start by deeply understanding your vision, market dynamics, and competitive landscape. Through collaborative workshops and data analysis, we identify the core problem worth solving and validate market demand.',
+    title: 'Discover',
+    description: 'We start by deeply understanding your business challenge and the specific problems you need to solve. Through collaborative workshops and stakeholder interviews, we assess your data readiness, identify key opportunities, and validate that your organization has the foundation needed to build successful AI solutions.',
     image: '/images/approach-discovery.png',
   },
   {
     number: '02',
-    title: 'Validation',
-    description: 'We build rapid prototypes and run targeted experiments to test key assumptions. User feedback and behavioral data guide us toward product-market fit, ensuring we invest resources in features that truly matter.',
+    title: 'Prototype',
+    description: 'Our team rapidly builds a working AI model tailored to your specific use case, typically delivering results within 2-3 weeks. We focus on proving viability through hands-on experimentation, testing core assumptions, and iterating based on real-world feedback to ensure we\'re solving the right problem before scaling.',
     image: '/images/approach-validation.png',
   },
   {
     number: '03',
-    title: 'Growth',
-    description: 'With validated demand, we scale systematically. Our growth strategies combine performance marketing, product optimization, and operational excellence to achieve sustainable unit economics and customer acquisition.',
+    title: 'Deploy',
+    description: 'We seamlessly integrate the validated AI solution into your existing systems and workflows, ensuring minimal disruption to your operations. Our deployment process includes comprehensive monitoring setup, performance tracking against key KPIs, and establishing feedback loops to measure real-world impact and ROI.',
     image: '/images/approach-growth.png',
   },
   {
     number: '04',
-    title: 'Scale',
-    description: 'We help you build the infrastructure for long-term success. From team expansion to operational systems, we ensure your startup can handle rapid growth while maintaining quality and culture.',
+    title: 'Maintain',
+    description: 'We provide ongoing support to optimize your AI systems continuously, adapting to changing business needs and evolving data patterns. Through regular performance reviews, model refinement, and proactive maintenance, we ensure your AI solutions deliver lasting value and remain competitive as your business grows.',
     image: '/images/approach-scale.png',
   },
 ]
@@ -53,26 +53,15 @@ export function OurApproachSection() {
         {/* Header Area */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mb-12 md:mb-16">
           {/* Left side - Title */}
-          <div className="flex items-baseline gap-4">
-            <motion.span
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="text-sm font-medium text-indigo-600"
-            >
-              04/
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-800"
-            >
-              Our approach
-            </motion.h2>
-          </div>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-800"
+          >
+            Our Approach
+          </motion.h2>
 
           {/* Right side - Buttons */}
           <motion.div
