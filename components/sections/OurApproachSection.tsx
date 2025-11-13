@@ -27,8 +27,8 @@ const approachSteps = [
   },
   {
     number: '04',
-    title: 'Maintain',
-    description: 'We provide ongoing support to optimize your AI systems continuously, adapting to changing business needs and evolving data patterns. Through regular performance reviews, model refinement, and proactive maintenance, we ensure your AI solutions deliver lasting value and remain competitive as your business grows.',
+    title: 'Scale',
+    description: 'We ensure your AI solutions grow with your business. As your needs expand, we help scale your systems to handle increased volume, complexity, and new use cases. Through strategic capacity planning, performance optimization, and continuous enhancement, we future-proof your AI investments to support enterprise growth and evolving market demands.',
     image: '/images/approach-scale.png',
   },
 ]
