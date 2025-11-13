@@ -2,9 +2,30 @@
 
 Custom Claude Code commands for managing parallel git worktrees with independent development workflows.
 
-## Overview
+## ⚡ NEW: Multi-Feature Parallel Development
 
-These commands enable you to develop the same feature simultaneously using multiple independent implementations, then select the best approach.
+**Want to work on multiple DIFFERENT features simultaneously?** Check out the new commands:
+
+- [/parallel:run](../parallel-run.md) - Run multiple features from a single prompt
+- [/parallel:status](../parallel-status.md) - Monitor all features
+- [/parallel:cleanup](../parallel-cleanup.md) - Clean up and merge
+- [/parallel:quick-start](../parallel-quick-start.md) - Quick start guide
+
+**New workflow:**
+```bash
+/parallel:run "
+Feature 1: Dark mode toggle
+Feature 2: User authentication
+Feature 3: Search functionality
+"
+# All 3 run in parallel automatically!
+```
+
+---
+
+## Overview (Original Commands)
+
+These original commands enable you to develop the same feature simultaneously using multiple independent implementations, then select the best approach.
 
 ## Commands
 
