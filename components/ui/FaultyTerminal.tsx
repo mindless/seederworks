@@ -33,6 +33,7 @@ export const FaultyTerminal = React.forwardRef<HTMLDivElement, FaultyTerminalPro
         return () => clearTimeout(timer)
       } else {
         setGlitchActive(false)
+        return undefined
       }
     }, [active, duration])
 

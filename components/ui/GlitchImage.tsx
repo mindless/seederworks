@@ -72,6 +72,7 @@ export function GlitchImage({
 
       return () => clearTimeout(timer)
     }
+    return undefined
   }, [autoTriggerDelay, triggerGlitch, hasAutoTriggered])
 
   // Handle hover
