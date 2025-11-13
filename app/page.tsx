@@ -5,7 +5,6 @@ import { PortfolioSection } from '@/components/sections/PortfolioSection'
 import { IndustriesSection } from '@/components/sections/IndustriesSection'
 import { CtaSection } from '@/components/sections/CtaSection'
 import { TeamSection } from '@/components/sections/TeamSection'
-import { BlogSection } from '@/components/sections/BlogSection'
 
 export default function Home() {
   return (
@@ -17,7 +16,6 @@ export default function Home() {
       <IndustriesSection />
       <CtaSection />
       <TeamSection />
-      <BlogSection />
     </>
   )
 }

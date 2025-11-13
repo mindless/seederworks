@@ -2,9 +2,9 @@
 
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
+import Image from 'next/image'
 import { Container } from '@/components/ui/Container'
 import { Button } from '@/components/ui/Button'
-import { GlitchImage } from '@/components/ui/GlitchImage'
 
 const stats = [
   { label: 'Target Portfolio ROI', value: '×7.5' },
@@ -53,13 +53,11 @@ export function AboutSection() {
             className="lg:col-span-4 flex items-center justify-center"
           >
             <div className="relative w-full max-w-[400px] md:max-w-[500px] lg:max-w-[600px] aspect-square">
-              <GlitchImage
+              <Image
                 src="/images/seedertree.png"
                 alt="Why SeederWorks"
-                autoTriggerDelay={30000}
-                glitchDuration={2000}
-                glitchIntensity={7}
-                enableHover={true}
+                fill
+                className="object-contain"
               />
             </div>
           </motion.div>
