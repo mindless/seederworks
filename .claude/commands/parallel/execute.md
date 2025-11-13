@@ -1,7 +1,7 @@
 ---
 description: Execute parallel feature development in an isolated worktree with independent implementation approach
-allowed-tools: Bash(git status:*), Bash(git branch:*), Bash(ls:*), Bash(pwd:*), Bash(git worktree:*)
-argument-hint: [spec-file]
+allowed-tools: Bash(git status:*), Bash(git branch:*), Bash(ls:*), Bash(pwd:*), Bash(git worktree:*), Bash(test:*), Bash(cat:*)
+argument-hint: [feature-description-or-file]
 model: inherit
 ---
 
@@ -11,7 +11,7 @@ Implement a feature specification independently in this worktree, exploring your
 
 ## Variables
 
-- **SPEC_FILE**: ${1:-specs/feature-spec.md}
+- **SPEC_INPUT**: $ARGUMENTS (can be inline description or file path)
 
 ## Context
 
@@ -31,11 +31,15 @@ Repository status:
 
 ### Feature Specification
 
-Read and analyze the specification file:
+Detect and display the specification (inline or file-based):
 
-**Specification location**: `${1:-specs/feature-spec.md}`
+!`if [ -f "$ARGUMENTS" ]; then echo "📄 Reading specification from file: $ARGUMENTS"; echo ""; cat "$ARGUMENTS"; else echo "📝 Inline Feature Specification:"; echo ""; echo "$ARGUMENTS"; fi`
 
-If the file exists, read it now to understand requirements.
+---
+
+**How the specification was provided:**
+
+!`if [ -f "$ARGUMENTS" ]; then echo "✓ File-based specification (detailed)"; else echo "✓ Inline specification (quick)"; fi`
 
 ## Core Principles
 
@@ -74,6 +78,39 @@ You are working in **ONE of multiple parallel worktrees** developing the same fe
    - Make atomic commits
    - Write clear commit messages
    - Keep changes reviewable
+
+## Inline Specification Format
+
+When using inline specifications, structure your feature description to include:
+
+**Recommended Format:**
+```
+Feature: [Name]
+Requirements: 1. [req1] 2. [req2] 3. [req3]
+Constraints: [technical constraints]
+Acceptance: [key criteria]
+```
+
+**Example Inline Specifications:**
+
+**Simple Feature:**
+```
+/execute "Dark mode toggle with localStorage persistence and smooth CSS transitions"
+```
+
+**Detailed Feature:**
+```
+/execute "Feature: User Authentication. Requirements: 1. Email/password login 2. JWT token generation 3. bcrypt password hashing 4. Rate limiting (5 attempts = 15min lockout) 5. Server Actions with Result<T> pattern. Constraints: Next.js 16, PostgreSQL, TDD approach. Acceptance: Tests pass, no auth bypass, tokens expire after 24h"
+```
+
+**Complex Feature (use file instead):**
+```
+/execute specs/complex-payment-flow.md
+```
+
+**When to use inline vs file:**
+- **Inline**: Simple features, 1-5 requirements, quick experiments
+- **File**: Complex features, 6+ requirements, detailed specs, reusable specs
 
 ## Implementation Workflow
 

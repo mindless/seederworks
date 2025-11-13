@@ -73,10 +73,25 @@ Show created directories:
    cd trees/$1-3 && claude
    ```
 
-2. **In each Claude Code instance**, run the execution command with your specification:
+2. **In each Claude Code instance**, run the execution command:
 
+   **Option A: Inline specification** (simple features):
+   ```bash
+   /execute "Dark mode toggle with localStorage, Tailwind CSS dark: variants, smooth 300ms transitions"
+   ```
+
+   **Option B: File-based specification** (complex features):
    ```bash
    /execute specs/your-spec.md
+   ```
+
+   **Example inline specifications:**
+   ```bash
+   # Simple
+   /execute "Add user profile page with avatar upload"
+
+   # Detailed
+   /execute "Feature: Search. Requirements: 1. Full-text search 2. Debounced input 3. Results pagination 4. Keyboard navigation. Constraints: Use React Server Components, PostgreSQL FTS, TDD approach"
    ```
 
 3. **Each instance will work independently** on the same specification, exploring different implementation approaches.

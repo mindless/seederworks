@@ -38,18 +38,26 @@ Template command to run inside each worktree for consistent, independent impleme
 
 **Usage:**
 ```bash
-/execute [spec-file]
+/execute [feature-description-or-file]
 ```
 
 **Examples:**
+
+**Inline specifications** (simple features):
+```bash
+/execute "Dark mode toggle with localStorage and smooth transitions"
+/execute "Add search with debouncing and keyboard navigation"
+/execute "Feature: Auth. Requirements: 1. Email login 2. JWT tokens 3. Rate limiting. Constraints: Next.js 16, TDD"
+```
+
+**File-based specifications** (complex features):
 ```bash
 /execute specs/login-feature.md
 /execute requirements/payment-flow.md
-/execute                               # Uses default: specs/feature-spec.md
 ```
 
 **What it does:**
-- Reads the specification file
+- Accepts inline description OR file path
 - Identifies current worktree/branch
 - Guides through TDD implementation
 - Creates `RESULTS.md` documenting approach
@@ -112,8 +120,14 @@ cd trees/user-auth-3 && claude
 
 ### 3. Execute in Each Session
 
-In each Claude Code instance:
+In each Claude Code instance, choose inline or file-based specification:
 
+**Option A: Inline** (for simple features):
+```bash
+/execute "User authentication with email/password, JWT tokens, bcrypt hashing, rate limiting"
+```
+
+**Option B: File-based** (for complex features):
 ```bash
 /execute specs/user-auth-spec.md
 ```
@@ -172,11 +186,67 @@ Remove all worktrees and branches:
 
 ---
 
+## Inline vs File-Based Specifications
+
+### When to Use Inline Specifications
+
+✅ **Use inline for:**
+- Simple features (1-5 requirements)
+- Quick experiments and prototypes
+- Time-sensitive tasks
+- Features with obvious implementation
+- Learning exercises
+
+**Example:**
+```bash
+/execute "Add pagination to user list: 20 items per page, previous/next buttons, show total count"
+```
+
+### When to Use File-Based Specifications
+
+✅ **Use files for:**
+- Complex features (6+ requirements)
+- Multiple acceptance criteria
+- Detailed technical constraints
+- Reusable specifications
+- Team collaboration
+- Features requiring diagrams/visuals
+
+**Example:**
+```bash
+/execute specs/complex-payment-integration.md
+```
+
+### Recommended Inline Format
+
+Structure your inline specifications for clarity:
+
+```
+Feature: [Name]
+Requirements: 1. [req1] 2. [req2] 3. [req3]
+Constraints: [technical constraints]
+Acceptance: [key success criteria]
+```
+
+**Examples:**
+
+**Simple:**
+```bash
+/execute "Dark mode toggle with localStorage persistence"
+```
+
+**Detailed:**
+```bash
+/execute "Feature: Search Bar. Requirements: 1. Full-text search across products 2. Debounced input (300ms) 3. Results dropdown with keyboard nav 4. Highlight matching text 5. Empty state handling. Constraints: React Server Components, PostgreSQL FTS, < 200ms response. Acceptance: Tests pass, accessible (WCAG AA), works on mobile"
+```
+
+---
+
 ## Best Practices
 
 ### Specification Files
 
-Create clear, detailed specifications in `specs/` directory:
+For complex features, create detailed specifications in `specs/` directory:
 
 ```markdown
 # Feature: User Authentication

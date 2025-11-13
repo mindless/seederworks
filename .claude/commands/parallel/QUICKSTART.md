@@ -17,10 +17,15 @@ Let's implement a "Dark Mode Toggle" feature with 3 parallel approaches:
 - Creates branches: `dark-mode-1`, `dark-mode-2`, `dark-mode-3`
 - Copies environment files to each
 
-### 2. Create Specification (5 minutes)
+### 2. Define Feature (10 seconds)
 
+**Option A: Inline specification** (quick and easy):
 ```bash
-# Create a simple spec
+# No file needed! Define inline in step 4
+```
+
+**Option B: File-based specification** (for complex features):
+```bash
 cat > specs/dark-mode-spec.md << 'EOF'
 # Feature: Dark Mode Toggle
 
@@ -75,8 +80,14 @@ tmux new -s dark-mode \; \
 
 ### 4. Execute in Each (20 minutes)
 
-In each Claude Code session:
+In each Claude Code session, use inline or file-based specification:
 
+**Option A: Inline specification** (recommended for simple features):
+```bash
+/execute "Dark mode toggle: localStorage persistence, Tailwind CSS dark: variants, smooth 300ms transitions, context provider for theme state"
+```
+
+**Option B: File-based specification**:
 ```bash
 /execute specs/dark-mode-spec.md
 ```
@@ -175,18 +186,27 @@ Each valid, each with trade-offs!
 
 ### 1. Write Clear Specs
 
-**Good spec:**
-```markdown
-## Requirements
-1. User can upload images up to 5MB
-2. Images are optimized to WebP
-3. Progress bar shows upload status
+**Good inline spec:**
+```bash
+/execute "Image upload: max 5MB, optimize to WebP, show progress bar with percentage"
 ```
 
-**Poor spec:**
+**Poor inline spec:**
+```bash
+/execute "Handle images"
+```
+
+**Good file-based spec** (for complex features):
 ```markdown
+# Feature: Image Upload System
+
 ## Requirements
-1. Handle images
+1. User can upload images up to 5MB
+2. Automatic optimization to WebP format
+3. Progress bar with percentage
+4. Error handling for oversized files
+5. Preview before upload
+...
 ```
 
 ### 2. Encourage Diversity
